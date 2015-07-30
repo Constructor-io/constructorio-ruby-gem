@@ -1,0 +1,8 @@
+runtime: ruby21
+
+env:
+  PATH: "${ROCK_PATH}/bin:${PATH}"
+
+build: |
+  rm -f ./bin/bundle
+  {{ parent }}
