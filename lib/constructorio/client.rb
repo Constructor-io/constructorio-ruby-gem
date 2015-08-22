@@ -48,11 +48,7 @@ module ConstructorIO
         request.headers['Content-Type'] = 'application/json'
         request.body = params.to_json
       end
-      if response.status.to_s =~ /^2/
-        return nil
-      else
-        return response.status
-      end
+      response
     end
   end
 end
