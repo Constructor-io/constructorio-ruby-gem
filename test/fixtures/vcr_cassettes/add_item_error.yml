@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://Bad%20token:@dev.ac.cnstrc.com/v1/item?autocomplete_key=Du08voCN2t3IKdUhSepw
+    body:
+      encoding: UTF-8
+      string: '{"item_name":"power_drill","autocomplete_section":"standard"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: UNAUTHORIZED
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '120'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 22 Aug 2015 02:50:30 GMT
+      X-Varnish:
+      - '1173375167'
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "message": "Invalid auth_token. If you've forgotten your token, you can generate a new one in the admin dashboard"
+        }
+    http_version: 
+  recorded_at: Sat, 22 Aug 2015 02:50:31 GMT
+recorded_with: VCR 2.9.3
