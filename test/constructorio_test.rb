@@ -47,4 +47,27 @@ class ConstructorIOTest < MiniTest::Test
     c.modify( { item_name: "power drill" } )
   end
 
+  def test_verify_calls_get
+    c = ConstructorIO::Client.new
+    c.expects(:call_api).with(
+      "verify",
+      "get"
+    )
+
+    c.verify
+  end
+
+  def test_verify_sends_request
+    c = ConstructorIO::Client.new
+
+    c.expects(:send_request).with(
+      "verify",
+      "get",
+      instance_of(Faraday::Connection),
+      {},
+      "example_autocomplete_key"
+    )
+
+    c.verify
+  end
 end

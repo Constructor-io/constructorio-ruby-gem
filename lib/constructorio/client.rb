@@ -32,7 +32,7 @@ module ConstructorIO
 
     private
 
-    def call_api(path, method, params)
+    def call_api(path, method, params = {})
       api_token = ConstructorIO.configuration.api_token
       api_url = ConstructorIO.configuration.api_url || "https://ac.constructor.io/"
       autocomplete_key = ConstructorIO.configuration.autocomplete_key

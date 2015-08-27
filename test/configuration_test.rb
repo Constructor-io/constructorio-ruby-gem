@@ -10,6 +10,6 @@ class ConfigurationTest < MiniTest::Test
   end
 
   def test_configure_api_url
-    assert_equal ConstructorIO.configuration.api_url, "http://example.constructor.io"
+    assert_equal ConstructorIO.configuration.api_url, "http://dev.ac.cnstrc.com"
   end
 end
