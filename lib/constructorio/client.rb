@@ -34,7 +34,7 @@ module ConstructorIO
 
     def call_api(path, method, params = {})
       api_token = ConstructorIO.configuration.api_token
-      api_url = ConstructorIO.configuration.api_url || "https://ac.constructor.io/"
+      api_url = ConstructorIO.configuration.api_url || "https://ac.cnstrc.com/"
       autocomplete_key = ConstructorIO.configuration.autocomplete_key
       @http_client ||= Faraday.new(url: api_url)
       @http_client.basic_auth(api_token, '')
