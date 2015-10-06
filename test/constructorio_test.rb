@@ -1,6 +1,21 @@
 require_relative 'test_helper'
 
 class ConstructorIOTest < MiniTest::Test
+#  def test_add_record_calls_post_with_local_config
+#    c = ConstructorIO::Client.new(ConstructorIO::Configuration.new(
+#      api_token: 12345,
+#      autocomplete_key: 12345,
+#      api_url: "http://dev.ac.cnstrc.com")
+#    )
+#    c.expects(:call_api).with(
+#      "item",
+#      "post",
+#      { item_name: "power drill" }
+#    )
+#
+#    c.add( { item_name: "power drill" } )
+#  end
+
   def test_add_record_calls_post
     c = ConstructorIO::Client.new
     c.expects(:call_api).with(
