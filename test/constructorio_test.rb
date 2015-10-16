@@ -1,21 +1,6 @@
 require_relative 'test_helper'
 
 class ConstructorIOTest < MiniTest::Test
-#  def test_add_record_calls_post_with_local_config
-#    c = ConstructorIO::Client.new(ConstructorIO::Configuration.new(
-#      api_token: 12345,
-#      autocomplete_key: 12345,
-#      api_url: "http://dev.ac.cnstrc.com")
-#    )
-#    c.expects(:call_api).with(
-#      "item",
-#      "post",
-#      { item_name: "power drill" }
-#    )
-#
-#    c.add( { item_name: "power drill" } )
-#  end
-
   def test_add_record_calls_post
     c = ConstructorIO::Client.new
     c.expects(:call_api).with(
@@ -35,6 +20,23 @@ class ConstructorIOTest < MiniTest::Test
       instance_of(Faraday::Connection),
       { item_name: "power drill" },
       "example_autocomplete_key"
+    )
+
+    c.add( { item_name: "power drill" } )
+  end
+
+  def test_add_record_sends_request_with_local_config
+    c = ConstructorIO::Client.new(ConstructorIO::Configuration.new(
+      api_token: "this-api-token",
+      autocomplete_key: "this-autocomplete-key",
+      api_url: "https://devac.cnstrc.com")
+    )
+    c.expects(:send_request).with(
+      "item",
+      "post",
+      instance_of(Faraday::Connection),
+      { item_name: "power drill" },
+      "this-autocomplete-key"
     )
 
     c.add( { item_name: "power drill" } )

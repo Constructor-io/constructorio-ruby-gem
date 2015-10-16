@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://IC9WGYro9O8o5orJW7p2:@dev.ac.cnstrc.com/v1/item?autocomplete_key=Du08voCN2t3IKdUhSepw
+    uri: https://example_api_token:@devac.cnstrc.com/v1/item?autocomplete_key=example_autocomplete_key
     body:
       encoding: UTF-8
       string: '{"item_name":"power_drill","autocomplete_section":"standard"}'
@@ -20,30 +20,32 @@ http_interactions:
       code: 204
       message: NO CONTENT
     headers:
-      Server:
-      - nginx/1.4.6 (Ubuntu)
-      Content-Type:
-      - text/html; charset=utf-8
-      Content-Length:
-      - '0'
-      Set-Cookie:
-      - session=eyJwd19oYXNoIjp7IiBiIjoiSkRKaEpEQTRKRkpQY1RkNGJGSnlOeTlzWXpaVFYzWkNjbFYyUkM1YVZqQXlZMjlUVVM5b05DNVZhRlJUVG5Bek5XSlZVVFZ0UXpobWNrd3kifX0.CLlrcA.PcmF6orlyXrxZhE4eQQPN6Q4hn4;
-        HttpOnly; Path=/
       Accept-Ranges:
       - bytes
-      Date:
-      - Sat, 22 Aug 2015 02:09:52 GMT
-      X-Varnish:
-      - '1173375154'
       Age:
       - '0'
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Fri, 16 Oct 2015 16:31:30 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Set-Cookie:
+      - session=eyJwd19oYXNoIjp7IiBiIjoiSkRKaEpEQTRKRkpQY1RkNGJGSnlOeTlzWXpaVFYzWkNjbFYyUkM1YVZqQXlZMjlUVVM5b05DNVZhRlJUVG5Bek5XSlZVVFZ0UXpobWNrd3kifX0.CQK34g.J6XoEQJTyZV5ngAmVgSsYthAz0c;
+        HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=31536000
       Via:
       - 1.1 varnish
+      X-Varnish:
+      - '1717338774'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sat, 22 Aug 2015 02:09:52 GMT
+  recorded_at: Fri, 16 Oct 2015 16:31:27 GMT
 recorded_with: VCR 2.9.3
