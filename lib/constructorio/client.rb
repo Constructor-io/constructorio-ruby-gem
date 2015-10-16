@@ -2,6 +2,17 @@ require 'json'
 
 module ConstructorIO
   class Client
+
+    attr_accessor :local_configuration
+
+    def initialize(config = nil)
+      @local_configuration = config || ConstructorIO::Configuration.new(
+        api_token: ConstructorIO.configuration.api_token,
+        api_url: ConstructorIO.configuration.api_url || "https://ac.cnstrc.com/",
+        autocomplete_key: ConstructorIO.configuration.autocomplete_key
+      )
+    end
+
     def add(params)
       call_api("item", "post", params)
     end
@@ -33,9 +44,9 @@ module ConstructorIO
     private
 
     def call_api(path, method, params = {})
-      api_token = ConstructorIO.configuration.api_token
-      api_url = ConstructorIO.configuration.api_url || "https://ac.cnstrc.com/"
-      autocomplete_key = ConstructorIO.configuration.autocomplete_key
+      api_token = self.local_configuration.api_token
+      api_url = self.local_configuration.api_url
+      autocomplete_key = self.local_configuration.autocomplete_key
       @http_client ||= Faraday.new(url: api_url)
       @http_client.basic_auth(api_token, '')
 

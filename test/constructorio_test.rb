@@ -25,6 +25,23 @@ class ConstructorIOTest < MiniTest::Test
     c.add( { item_name: "power drill" } )
   end
 
+  def test_add_record_sends_request_with_local_config
+    c = ConstructorIO::Client.new(ConstructorIO::Configuration.new(
+      api_token: "this-api-token",
+      autocomplete_key: "this-autocomplete-key",
+      api_url: "https://devac.cnstrc.com")
+    )
+    c.expects(:send_request).with(
+      "item",
+      "post",
+      instance_of(Faraday::Connection),
+      { item_name: "power drill" },
+      "this-autocomplete-key"
+    )
+
+    c.add( { item_name: "power drill" } )
+  end
+
   def test_remove_record_calls_delete
     c = ConstructorIO::Client.new
     c.expects(:call_api).with(
