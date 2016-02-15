@@ -41,6 +41,10 @@ module ConstructorIO
       call_api("verify", "get")
     end
 
+    def add_batch(params)
+      call_api("batch_items", "post", params)
+    end
+
     private
 
     def call_api(path, method, params = {})
