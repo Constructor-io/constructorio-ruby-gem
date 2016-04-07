@@ -17,6 +17,10 @@ module ConstructorIO
       call_api("item", "post", params)
     end
 
+    def add_or_update(params)
+      call_api("item", "put", params, {force: 1})
+    end
+
     def remove(params)
       call_api("item", "delete", params)
     end
@@ -45,21 +49,25 @@ module ConstructorIO
       call_api("batch_items", "post", params)
     end
 
+    def add_or_update_batch(params)
+      call_api("batch_items", "put", params, {force: 1})
+    end
+
     private
 
-    def call_api(path, method, params = {})
+    def call_api(path, method, params = {}, additional_query_params = {})
       api_token = self.local_configuration.api_token
       api_url = self.local_configuration.api_url
       autocomplete_key = self.local_configuration.autocomplete_key
       @http_client ||= Faraday.new(url: api_url)
       @http_client.basic_auth(api_token, '')
 
-      send_request(path, method, @http_client, params, autocomplete_key)
+      send_request(path, method, @http_client, params, autocomplete_key, additional_query_params)
     end
 
-    def send_request(path, method, http_client, params, autocomplete_key)
+    def send_request(path, method, http_client, params, autocomplete_key, additional_query_params)
       response = http_client.send(method) do |request|
-        request.url "/v1/#{path}?autocomplete_key=#{autocomplete_key}"
+        request.url "/v1/#{path}?autocomplete_key=#{autocomplete_key}#{URI.encode_www_form(additional_query_params)}"
         request.headers['Content-Type'] = 'application/json'
         request.body = params.to_json
       end
