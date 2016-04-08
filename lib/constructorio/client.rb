@@ -66,8 +66,9 @@ module ConstructorIO
     end
 
     def send_request(path, method, http_client, params, autocomplete_key, additional_query_params)
+      query_params = additional_query_params ? "&#{URI.encode_www_form(additional_query_params)}" : ""
       response = http_client.send(method) do |request|
-        request.url "/v1/#{path}?autocomplete_key=#{autocomplete_key}#{URI.encode_www_form(additional_query_params)}"
+        request.url "/v1/#{path}?autocomplete_key=#{autocomplete_key}#{query_params}"
         request.headers['Content-Type'] = 'application/json'
         request.body = params.to_json
       end
