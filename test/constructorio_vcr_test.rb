@@ -19,6 +19,51 @@ class ConstructorIOVCRTest < MiniTest::Test
     end
   end
 
+  def test_add_or_update_item
+    c = ConstructorIO::Client.new
+
+    VCR.use_cassette("add_or_update_item") do
+      response = c.add_or_update(
+        { item_name: "power_drill", autocomplete_section: "standard" }
+      )
+      assert_equal response.status, 204
+    end
+  end
+
+  def test_add_batch
+    c = ConstructorIO::Client.new
+
+    VCR.use_cassette("add_batch") do
+      response = c.add_batch(
+        autocomplete_section: "standard",
+        items: [{
+          item_name: "power drill x1",
+          item_name: "power drill x2",
+          item_name: "power drill x3",
+          item_name: "power drill x4",
+        }]
+      )
+      assert_equal response.status, 204
+    end
+  end
+
+  def test_add_or_update_batch
+    c = ConstructorIO::Client.new
+
+    VCR.use_cassette("add_or_update_batch") do
+      response = c.add_or_update_batch(
+        autocomplete_section: "standard",
+        items: [{
+          item_name: "power drill x1",
+          item_name: "power drill x2",
+          item_name: "power drill x3",
+          item_name: "power drill x4",
+        }]
+      )
+      assert_equal response.status, 204
+    end
+  end
+
   def test_remove_item
     c = ConstructorIO::Client.new
 

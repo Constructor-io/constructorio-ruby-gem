@@ -1,0 +1,103 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://example_api_token:@devac.cnstrc.com/v1/batch_items?autocomplete_key=example_autocomplete_key
+    body:
+      encoding: UTF-8
+      string: '{"autocomplete_section":"standard","items":[{"item_name":"power drill
+        x4"}]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 204
+      message: NO CONTENT
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 13 Apr 2016 03:24:21 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Set-Cookie:
+      - session=eyJwd19oYXNoIjp7IiBiIjoiSkRKaEpEQTRKRkpQY1RkNGJGSnlOeTlzWXpaVFYzWkNjbFYyUkM1YVZqQXlZMjlUVVM5b05DNVZhRlJUVG5Bek5XSlZVVFZ0UXpobWNrd3kifX0.Ce9NZQ.2WTup2w-f5SddEWh1IanDSv_eHc;
+        HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 varnish
+      X-Varnish:
+      - '205905703'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 13 Apr 2016 03:24:21 GMT
+- request:
+    method: post
+    uri: https://IC9WGYro9O8o5orJW7p2:@devac.cnstrc.com/v1/batch_items?autocomplete_key=Du08voCN2t3IKdUhSepw
+    body:
+      encoding: UTF-8
+      string: '{"autocomplete_section":"standard","items":[{"item_name":"power drill
+        x4"}]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: BAD REQUEST
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 13 Apr 2016 03:27:23 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Set-Cookie:
+      - session=eyJwd19oYXNoIjp7IiBiIjoiSkRKaEpEQTRKRkpQY1RkNGJGSnlOeTlzWXpaVFYzWkNjbFYyUkM1YVZqQXlZMjlUVVM5b05DNVZhRlJUVG5Bek5XSlZVVFZ0UXpobWNrd3kifX0.Ce9OGw.EG_jTI4OybnYOTdNdcy63ZFq90I;
+        HttpOnly; Path=/
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 varnish
+      X-Varnish:
+      - '205905765'
+      Content-Length:
+      - '174'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "{\n  \"error_items\": [\n    {\n      \"item_name\": \"power drill
+        x4\"\n    }\n  ], \n  \"message\": \"That item already exists. Please use
+        the modify or add_or_update API to modify it.\"\n}"
+    http_version: 
+  recorded_at: Wed, 13 Apr 2016 03:27:24 GMT
+recorded_with: VCR 2.9.3
