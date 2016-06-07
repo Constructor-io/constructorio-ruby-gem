@@ -195,16 +195,14 @@ class ConstructorIOTest < MiniTest::Test
       "delete",
       instance_of(Faraday::Connection),
       { autocomplete_section: "Products", items: [ { item_name: "item" } ] },
-      "example_autocomplete_key"
+      "example_autocomplete_key",
+      {}
     )
     c.remove_batch(
       {
         autocomplete_section: "Products",
-        items: [ { item_name: "item" } ] 
+        items: [ { item_name: "item" } ]
       }
     )
   end
-
-
-
 end

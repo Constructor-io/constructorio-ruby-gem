@@ -54,7 +54,7 @@ module ConstructorIO
     end
 
     def remove_batch(params)
-      call_api("batch_items","delete",params)
+      call_api("batch_items", "delete", params)
     end
 
     private
