@@ -187,4 +187,24 @@ class ConstructorIOTest < MiniTest::Test
       }
     )
   end
+
+  def test_remove_batch_sends_request
+    c = ConstructorIO::Client.new
+    c.expects(:send_request).with(
+      "batch_items",
+      "delete",
+      instance_of(Faraday::Connection),
+      { autocomplete_section: "Products", items: [ { item_name: "item" } ] },
+      "example_autocomplete_key"
+    )
+    c.remove_batch(
+      {
+        autocomplete_section: "Products",
+        items: [ { item_name: "item" } ] 
+      }
+    )
+  end
+
+
+
 end
