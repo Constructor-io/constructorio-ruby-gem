@@ -53,6 +53,10 @@ module ConstructorIO
       call_api("batch_items", "put", params, {force: 1})
     end
 
+    def remove_batch(params)
+      call_api("batch_items", "delete", params)
+    end
+
     private
 
     def call_api(path, method, params = {}, additional_query_params = {})

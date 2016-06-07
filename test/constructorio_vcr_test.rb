@@ -36,12 +36,12 @@ class ConstructorIOVCRTest < MiniTest::Test
     VCR.use_cassette("add_batch") do
       response = c.add_batch(
         autocomplete_section: "standard",
-        items: [{
-          item_name: "power drill x1",
-          item_name: "power drill x2",
-          item_name: "power drill x3",
-          item_name: "power drill x4",
-        }]
+        items: [
+          { item_name: "power drill x11" },
+          { item_name: "power drill x12" },
+          { item_name: "power drill x13" },
+          { item_name: "power drill x14" },
+        ]
       )
       assert_equal response.status, 204
     end
@@ -53,12 +53,12 @@ class ConstructorIOVCRTest < MiniTest::Test
     VCR.use_cassette("add_or_update_batch") do
       response = c.add_or_update_batch(
         autocomplete_section: "standard",
-        items: [{
-          item_name: "power drill x1",
-          item_name: "power drill x2",
-          item_name: "power drill x3",
-          item_name: "power drill x4",
-        }]
+        items: [
+          { item_name: "power drill x1" },
+          { item_name: "power drill x2" },
+          { item_name: "power drill x3" },
+          { item_name: "power drill x4" },
+        ]
       )
       assert_equal response.status, 204
     end
@@ -70,6 +70,23 @@ class ConstructorIOVCRTest < MiniTest::Test
     VCR.use_cassette("remove_item") do
       response = c.remove(
         { item_name: "power_drill", autocomplete_section: "standard" }
+      )
+      assert_equal response.status, 204
+    end
+  end
+
+  def test_remove_batch
+    c = ConstructorIO::Client.new
+
+    VCR.use_cassette("remove_batch") do
+      response = c.remove_batch(
+        autocomplete_section: "standard",
+        items: [
+          { item_name: "power_drill x1" },
+          { item_name: "power_drill x2" },
+          { item_name: "power_drill x3" },
+          { item_name: "power_drill x4" },
+        ]
       )
       assert_equal response.status, 204
     end
