@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself:
 
-    $ gem install customerio
+    $ gem install constructorio
 
 ## Usage
 
