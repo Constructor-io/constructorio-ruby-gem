@@ -2,12 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://example_api_token:@ac.cnstrc.com/v1/batch_items?autocomplete_key=example_autocomplete_key
+    uri: https://example_api_token:@ac.cnstrc.com/v1/item?autocomplete_key=example_autocomplete_key
     body:
       encoding: UTF-8
-      string: '{"autocomplete_section":"Search Suggestions","items":[{"item_name":"power
-        drill x11"},{"item_name":"power drill x12"},{"item_name":"power drill x13"},{"item_name":"power
-        drill x14"}]}'
+      string: '{"item_name":"power_drill","autocomplete_section":"Products","url":"/condition/1","metadata":{"key1":"value1","key2":"value2"}}'
     headers:
       User-Agent:
       - Faraday v0.9.1
@@ -42,7 +40,7 @@ http_interactions:
       Via:
       - 1.1 varnish
       X-Varnish:
-      - '1827964804'
+      - '739215594'
       Connection:
       - keep-alive
     body:

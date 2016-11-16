@@ -5,9 +5,10 @@ http_interactions:
     uri: https://example_api_token:@ac.cnstrc.com/v1/batch_items?autocomplete_key=example_autocomplete_key
     body:
       encoding: UTF-8
-      string: '{"autocomplete_section":"Search Suggestions","items":[{"item_name":"power
-        drill x11"},{"item_name":"power drill x12"},{"item_name":"power drill x13"},{"item_name":"power
-        drill x14"}]}'
+      string: '{"autocomplete_section":"Products","items":[{"item_name":"power_drill
+        1","url":"/condition/1","metadata":{"key1":"value1","key2":"value2"}},{"item_name":"power_drill
+        2","url":"/condition/2","metadata":{"key3":"value3","key4":"value4"}},{"item_name":"power_drill
+        3","url":"/condition/3","metadata":{"key5":"value5","key6":"value6"}}]}'
     headers:
       User-Agent:
       - Faraday v0.9.1
@@ -31,23 +32,23 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 16 Nov 2016 05:06:53 GMT
+      - Wed, 16 Nov 2016 05:06:52 GMT
       Server:
       - nginx/1.4.6 (Ubuntu)
       Set-Cookie:
-      - session=eyJwd19oYXNoIjp7IiBiIjoiSkRKaEpEQTRKRlY0YVVacFNpODFUa3hhWTJWaE5sQmtPRWxwU0M1MEwyeHhjME0zVFZkbFJFWm1hQzUzVmpSQ2RuSkhjbGhuVGxjdVIweHAifX0.Cw167Q.Jw-ZHw-7tRKVPOEBUp0-o4fXp58;
+      - session=eyJwd19oYXNoIjp7IiBiIjoiSkRKaEpEQTRKRlY0YVVacFNpODFUa3hhWTJWaE5sQmtPRWxwU0M1MEwyeHhjME0zVFZkbFJFWm1hQzUzVmpSQ2RuSkhjbGhuVGxjdVIweHAifX0.Cw167A.J1MXRYqdpA5qlEKI0AfwHKspaJQ;
         HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=31536000
       Via:
       - 1.1 varnish
       X-Varnish:
-      - '1827964804'
+      - '739215592'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 16 Nov 2016 05:06:53 GMT
+  recorded_at: Wed, 16 Nov 2016 05:06:52 GMT
 recorded_with: VCR 2.9.3

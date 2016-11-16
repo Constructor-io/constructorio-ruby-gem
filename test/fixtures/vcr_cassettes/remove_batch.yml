@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://example_api_token:@devac.cnstrc.com/v1/batch_items?autocomplete_key=example_autocomplete_key
+    uri: https://example_api_token:@ac.cnstrc.com/v1/batch_items?autocomplete_key=example_autocomplete_key
     body:
       encoding: UTF-8
-      string: '{"autocomplete_section":"standard","items":[{"item_name":"power_drill
+      string: '{"autocomplete_section":"Search Suggestions","items":[{"item_name":"power_drill
         x1"},{"item_name":"power_drill x2"},{"item_name":"power_drill x3"},{"item_name":"power_drill
         x4"}]}'
     headers:
@@ -31,23 +31,23 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 07 Jun 2016 03:26:48 GMT
+      - Wed, 16 Nov 2016 05:06:54 GMT
       Server:
       - nginx/1.4.6 (Ubuntu)
       Set-Cookie:
-      - session=eyJwd19oYXNoIjp7IiBiIjoiSkRKaEpEQTRKRkpQY1RkNGJGSnlOeTlzWXpaVFYzWkNjbFYyUkM1YVZqQXlZMjlUVVM5b05DNVZhRlJUVG5Bek5XSlZVVFZ0UXpobWNrd3kifX0.CjfQeA.iF5gfCJO-QeR65yv3bX96VJIYYE;
+      - session=eyJwd19oYXNoIjp7IiBiIjoiSkRKaEpEQTRKRlY0YVVacFNpODFUa3hhWTJWaE5sQmtPRWxwU0M1MEwyeHhjME0zVFZkbFJFWm1hQzUzVmpSQ2RuSkhjbGhuVGxjdVIweHAifX0.Cw167g.bIpQgiI5kG0qDYfl2X7PMJIq-H0;
         HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=31536000
       Via:
       - 1.1 varnish
       X-Varnish:
-      - '726242940'
+      - '1827964805'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 07 Jun 2016 03:26:48 GMT
+  recorded_at: Wed, 16 Nov 2016 05:06:53 GMT
 recorded_with: VCR 2.9.3

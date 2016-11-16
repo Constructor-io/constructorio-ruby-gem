@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://example_api_token:@devac.cnstrc.com/v1/item?autocomplete_key=example_autocomplete_key
+    uri: https://example_api_token:@ac.cnstrc.com/v1/item?autocomplete_key=example_autocomplete_key
     body:
       encoding: UTF-8
-      string: '{"item_name":"power_drill","autocomplete_section":"standard","suggested_score":10}'
+      string: '{"item_name":"power_drill","autocomplete_section":"Search Suggestions","suggested_score":10}'
     headers:
       User-Agent:
       - Faraday v0.9.1
@@ -29,23 +29,23 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 16 Oct 2015 16:32:45 GMT
+      - Wed, 16 Nov 2016 05:06:52 GMT
       Server:
       - nginx/1.4.6 (Ubuntu)
       Set-Cookie:
-      - session=eyJwd19oYXNoIjp7IiBiIjoiSkRKaEpEQTRKRkpQY1RkNGJGSnlOeTlzWXpaVFYzWkNjbFYyUkM1YVZqQXlZMjlUVVM5b05DNVZhRlJUVG5Bek5XSlZVVFZ0UXpobWNrd3kifX0.CQK4LQ.pCfOTI1WpHfQS43FrXjaoC69dE4;
+      - session=eyJwd19oYXNoIjp7IiBiIjoiSkRKaEpEQTRKRlY0YVVacFNpODFUa3hhWTJWaE5sQmtPRWxwU0M1MEwyeHhjME0zVFZkbFJFWm1hQzUzVmpSQ2RuSkhjbGhuVGxjdVIweHAifX0.Cw167A.J1MXRYqdpA5qlEKI0AfwHKspaJQ;
         HttpOnly; Path=/
       Strict-Transport-Security:
       - max-age=31536000
       Via:
       - 1.1 varnish
       X-Varnish:
-      - '1717338812'
+      - '1827964802'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 16 Oct 2015 16:32:42 GMT
+  recorded_at: Wed, 16 Nov 2016 05:06:52 GMT
 recorded_with: VCR 2.9.3
